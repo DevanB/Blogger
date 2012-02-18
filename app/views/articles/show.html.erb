@@ -1,4 +1,7 @@
 <h1><%= @article.title %></h1>
+<% if @article.image_file_name %>
+    <%= image_tag @article.image.url %><br />
+<% end %>
 <p><%= @article.body %></p>
 <%= link_to "edit", edit_article_path(@article) %>
 <%= link_to "delete", article_path(@article),:confirm => "Really delete this article?", :method => :delete %>
